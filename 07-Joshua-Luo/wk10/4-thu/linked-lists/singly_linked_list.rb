@@ -53,7 +53,13 @@ class SinglyLinkedList
     end
 
     def find(needle) # return the node with value of needle (or nil)
-
+        current_node=@head
+        return nil if !current_node.next
+        return current_node if current_node.value == needle
+        while (current_node = current_node.next)
+            return current_node if current_node.value == needle
+        end
+    
     end
 
     # Tricky
